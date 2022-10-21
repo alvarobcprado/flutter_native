@@ -37,6 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     _batteryApi = BatteryApi();
     _batteryInfo = BatteryInfo(level: 0, state: BatteryState.unknown);
+
+    _getBatteryInfo();
   }
 
   void _getBatteryInfo() async {
@@ -78,9 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _getBatteryInfo,
-        tooltip: 'Battery Level',
+        tooltip: 'Battery info',
         child: const Icon(Icons.battery_unknown),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
